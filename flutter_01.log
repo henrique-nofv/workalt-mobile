@@ -1,0 +1,96 @@
+Flutter crash report; please file at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter emulators --create flu
+
+## exception
+
+ArgumentError: Invalid argument(s): Cannot find executable for null.
+
+```
+#0      _getExecutable (package:process/src/interface/local_process_manager.dart:127:5)
+#1      LocalProcessManager.runSync (package:process/src/interface/local_process_manager.dart:94:30)
+#2      _DefaultProcessUtils.runSync (package:flutter_tools/src/base/process.dart:368:50)
+#3      EmulatorManager._getPreferredAvailableDevice (package:flutter_tools/src/emulator.dart:144:46)
+#4      EmulatorManager.createEmulator (package:flutter_tools/src/emulator.dart:82:33)
+<asynchronous suspension>
+#5      EmulatorsCommand._createEmulator (package:flutter_tools/src/commands/emulators.dart:88:31)
+#6      EmulatorsCommand.runCommand (package:flutter_tools/src/commands/emulators.dart:49:13)
+#7      FlutterCommand.verifyThenRunCommand (package:flutter_tools/src/runner/flutter_command.dart:615:18)
+#8      _asyncThenWrapperHelper.<anonymous closure> (dart:async-patch/async_patch.dart:73:64)
+#9      _rootRunUnary (dart:async/zone.dart:1134:38)
+#10     _CustomZone.runUnary (dart:async/zone.dart:1031:19)
+#11     _FutureListener.handleValue (dart:async/future_impl.dart:139:18)
+#12     Future._propagateToListeners.handleValueCallback (dart:async/future_impl.dart:680:45)
+#13     Future._propagateToListeners (dart:async/future_impl.dart:709:32)
+#14     Future._completeWithValue (dart:async/future_impl.dart:524:5)
+#15     Future._asyncComplete.<anonymous closure> (dart:async/future_impl.dart:554:7)
+#16     _rootRun (dart:async/zone.dart:1126:13)
+#17     _CustomZone.run (dart:async/zone.dart:1023:19)
+#18     _CustomZone.runGuarded (dart:async/zone.dart:925:7)
+#19     _CustomZone.bindCallbackGuarded.<anonymous closure> (dart:async/zone.dart:965:23)
+#20     _microtaskLoop (dart:async/schedule_microtask.dart:43:21)
+#21     _startMicrotaskLoop (dart:async/schedule_microtask.dart:52:5)
+#22     _runPendingImmediateCallback (dart:isolate-patch/isolate_patch.dart:118:13)
+#23     _RawReceivePortImpl._handleMessage (dart:isolate-patch/isolate_patch.dart:175:5)
+```
+
+## flutter doctor
+
+```
+[32m[✓][39m Flutter (Channel stable,
+    v1.12.13+hotfix.9, on Linux, locale
+    pt_BR.UTF-8)
+    [32m•[39m Flutter version 1.12.13+hotfix.9 at
+      /home/henrique/development/flutter
+    [32m•[39m Framework revision f139b11009 (3
+      months ago), 2020-03-30 13:57:30
+      -0700
+    [32m•[39m Engine revision af51afceb8
+    [32m•[39m Dart version 2.7.2
+
+[33m[!][39m Android toolchain - develop for
+    Android devices (Android SDK version
+    29.0.3)
+    [32m•[39m Android SDK at
+      /home/henrique/Android/Sdk
+    [32m•[39m Android NDK location not configured
+      (optional; useful for native
+      profiling support)
+    [32m•[39m Platform android-29, build-tools
+      29.0.3
+    [32m•[39m ANDROID_HOME =
+      /home/henrique/Android/Sdk
+    [32m•[39m Java binary at:
+      /snap/android-studio/90/android-stud
+      io/jre/bin/java
+    [32m•[39m Java version OpenJDK Runtime
+      Environment (build
+      1.8.0_242-release-1644-b3-6222593)
+    [31m✗[39m Android license status unknown.
+      Try re-installing or updating your
+      Android SDK Manager.
+      See
+      https://developer.android.com/studio
+      /#downloads or visit
+      https://flutter.dev/setup/#android-s
+      etup for detailed instructions.
+
+[33m[!][39m Android Studio (version 4.0)
+    [32m•[39m Android Studio at
+      /snap/android-studio/90/android-stud
+      io
+    [31m✗[39m Flutter plugin not installed; this
+      adds Flutter specific functionality.
+    [31m✗[39m Dart plugin not installed; this adds
+      Dart specific functionality.
+    [32m•[39m Java version OpenJDK Runtime
+      Environment (build
+      1.8.0_242-release-1644-b3-6222593)
+
+[33m[!][39m Connected device
+    [33m![39m No devices available
+
+[33m![39m Doctor found issues in 3 categories.
+```
